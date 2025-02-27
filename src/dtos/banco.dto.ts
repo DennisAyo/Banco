@@ -18,6 +18,6 @@ export class BancoDto {
 
     @IsNotEmpty({ message: 'El código BIN del banco es requerido' })
     @IsString({ message: 'El código BIN debe ser una cadena de texto' })
-    @Length(6, 6, { message: 'El código BIN debe tener 6 caracteres' })
+    @Length(10, 10, { message: 'El código BIN debe tener 10 caracteres' })
     bin: string;
 } 
