@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Banco } from './entities/banco.entity';
@@ -9,13 +10,16 @@ import { BancoRepository } from './repositories/banco.repository';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mariadb',
       host: 'localhost',
-      port: 5432,
-      username: 'postgres',
+      port: 3306,
+      username: 'root',
       password: '123',
-      database: 'banco_tarjeta',
+      database: 'marca_banco',
       entities: [Banco],
       synchronize: true,
     }),
