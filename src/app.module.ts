@@ -21,7 +21,7 @@ import { BancoRepository } from './repositories/banco.repository';
       password: '123',
       database: 'marca_banco',
       entities: [Banco],
-      synchronize: true,
+      synchronize: false,
     }),
     TypeOrmModule.forFeature([Banco]),
   ],
