@@ -15,10 +15,10 @@ import { BancoRepository } from './repositories/banco.repository';
     }),
     TypeOrmModule.forRoot({
       type: 'mariadb',
-      host: 'localhost',
+      host: 'ms-mariadb.ct6s2uqkmna8.us-east-2.rds.amazonaws.com',
       port: 3306,
-      username: 'root',
-      password: '123',
+      username: 'admin',
+      password: 'password123',
       database: 'marca_banco',
       entities: [Banco],
       synchronize: false,
